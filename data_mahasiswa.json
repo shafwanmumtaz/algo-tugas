@@ -1,20 +1,8 @@
 [
     {
-        "nim": "999907676",
-        "nama": "Shafwan Mumtaz",
-        "email": "shafwanmumtaz0@gmail.com",
-        "jurusan": "Teknik Informatika"
-    },
-    {
-        "nim": "999906885",
-        "nama": "Sarpawi",
-        "email": "Sarpawi@gmail.com",
-        "jurusan": "Teknik Informatika"
-    },
-    {
-        "nim": "999909723",
-        "nama": "Fajar Azizi",
-        "email": "fajarazizi@gmail.com",
+        "nim": "999902523",
+        "nama": "Aldi",
+        "email": "Aldi@gmail.com",
         "jurusan": "Teknik Informatika"
     },
     {
@@ -24,9 +12,21 @@
         "jurusan": "Teknik Informatika"
     },
     {
-        "nim": "999902523",
-        "nama": "Aldi",
-        "email": "Aldi@gmail.com",
+        "nim": "999906885",
+        "nama": "Sarpawi",
+        "email": "Sarpawi@gmail.com",
+        "jurusan": "Teknik Informatika"
+    },
+    {
+        "nim": "999907676",
+        "nama": "Shafwan Mumtaz",
+        "email": "shafwanmumtaz0@gmail.com",
+        "jurusan": "Teknik Informatika"
+    },
+    {
+        "nim": "999909723",
+        "nama": "Fajar Azizi",
+        "email": "fajarazizi@gmail.com",
         "jurusan": "Teknik Informatika"
     }
 ]
