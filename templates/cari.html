@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>🔍 Pencarian Mahasiswa</h2>
+
+<form method="POST" style="margin-bottom: 30px;">
+    <div class="form-group">
+        <label>Metode Pencarian:</label>
+        <select name="metode" required style="width: 100%; padding: 10px;">
+            <option value="nama">🔎 Linear Search (Berdasarkan Nama)</option>
+            <option value="jurusan">🔎 Sequential Search (Berdasarkan Jurusan)</option>
+            <option value="nim_binary">🎯 Binary Search (Berdasarkan NIM - perlu data terurut)</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Kata Kunci:</label>
+        <input type="text" name="keyword" value="{{ keyword }}" required placeholder="Masukkan kata kunci pencarian...">
+    </div>
+
+    <button type="submit" class="btn btn-primary">🔍 Cari</button>
+    <a href="{{ url_for('index') }}" class="btn btn-info">↩️ Kembali</a>
+</form>
+
+{% if hasil %}
+<h3>Hasil Pencarian ({{ metode }}):</h3>
+<table>
+    <thead>
+        <tr>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Jurusan</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for mhs in hasil %}
+        <tr>
+            <td>{{ mhs.nim }}</td>
+            <td>{{ mhs.nama }}</td>
+            <td>{{ mhs.jurusan }}</td>
+            <td>{{ mhs.email }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% elif keyword %}
+<div class="alert alert-danger">Tidak ditemukan data dengan kata kunci "{{ keyword }}"</div>
+{% endif %}
+{% endblock %}

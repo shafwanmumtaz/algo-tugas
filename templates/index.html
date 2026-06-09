@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>📋 Daftar Mahasiswa</h2>
+
+<div class="stats">
+    <strong>Total Mahasiswa:</strong> {{ total }} orang
+</div>
+
+{% if mahasiswa %}
+<table>
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>NIM</th>
+            <th>Nama Lengkap</th>
+            <th>Jurusan</th>
+            <th>Email</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for mhs in mahasiswa %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ mhs.nim }}</td>
+            <td>{{ mhs.nama }}</td>
+            <td>{{ mhs.jurusan }}</td>
+            <td>{{ mhs.email }}</td>
+            <td>
+                <a href="{{ url_for('edit', nim=mhs.nim) }}" class="btn btn-warning">✏️ Edit</a>
+                <a href="{{ url_for('hapus', nim=mhs.nim) }}" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">🗑️ Hapus</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-info" style="background:#e0f2fe; color:#0369a1;">
+    ⚠️ Belum ada data mahasiswa. Silakan tambah data melalui menu "Tambah Mahasiswa".
+</div>
+{% endif %}
+{% endblock %}
